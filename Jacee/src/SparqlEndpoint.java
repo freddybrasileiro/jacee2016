@@ -9,14 +9,14 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
 public class SparqlEndpoint {
 
 	public static void main(String[] args) {
+		String wikidataEndPoint = "https://query.wikidata.org/sparql";
+		
 		String queryString = ""
 				+ "select * "
 				+ "where{ "
-					+ "<http://www.wikidata.org/entity/Q3282983> ?p ?o . "
+					+ "<http://www.wikidata.org/entity/Q80> ?p ?o . "
 				+ "}"
 				+ "limit 10";
-		
-		String wikidataEndPoint = "https://query.wikidata.org/sparql";
 		
 		QueryExecution queryExecution = QueryExecutionFactory.sparqlService(wikidataEndPoint, queryString);	
 		ResultSet results = queryExecution.execSelect();
